@@ -21,7 +21,7 @@ const Card = (props) => {
           Link :<a href="https://github.com/ismaiel5/react-challenge/commits/master"> Click to download objects</a>
           <br />
           <br />
-          <Button title="Print Report" />
+          <Button title="Print Report" clickHandler={props.generateReportFunction}  />
         </div>
       )}
     </section>
