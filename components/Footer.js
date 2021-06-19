@@ -1,5 +1,7 @@
+import Styles from "../styles/Footer.module.scss"
+
 const Footer = (props) => {
-    return <div>{props.content}</div>;
+    return <div className={Styles.footer}>{props.content}</div>;
   };
   
   export default Footer;
