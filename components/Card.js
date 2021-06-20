@@ -1,27 +1,19 @@
-import { useState } from "react";
-
 import Styles from "../styles/Card.module.scss";
 import Button from "./Button";
 
 const Card = (props) => {
-  const [showSection, setShowSection] = useState(false);
-
-  function generateObjects() {
-    setShowSection(true);
-  }
-
   return (
     <section className={Styles.card}>
-      <Button title="Generate 4 Objects" clickHandler={generateObjects} />
+      <Button title="Generate 4 Objects" clickHandler={props.generateObjectsFunc} />
       <br />
       <br />
 
-      {showSection && (
+      {props.showSection && (
         <div>
-          Link :<a href="https://github.com/ismaiel5/react-challenge/commits/master"> Click to download objects</a>
+          Link :<a href={props.downloadLink} download={props.fileName}> Click to download objects</a>
           <br />
           <br />
-          <Button title="Print Report" clickHandler={props.generateReportFunction}  />
+          <Button title="Print Report" clickHandler={props.generateReportFunc} />
         </div>
       )}
     </section>
