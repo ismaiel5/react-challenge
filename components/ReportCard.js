@@ -1,11 +1,11 @@
 import Styles from "../styles/Card.module.scss";
 
 const ReportCard = (props) => {
-  const objectList = props.objects.map((obj, index) => {
+  const objectList = Object.keys(props.data).map((obj, index) => {
     return (
       <li key={index}>
         {" "}
-        {Object.keys(obj)} : {Object.values(obj)}{" "}
+        {obj}: {props.data[obj]}
       </li>
     );
   });

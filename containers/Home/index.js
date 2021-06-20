@@ -2,25 +2,27 @@ import { useState, useEffect } from "react";
 import Styles from "../../styles/Home.module.scss";
 import Card from "../../components/Card";
 import ReportCard from "../../components/ReportCard";
-import objects from "../../mockData/data";
+import mockData from "../../mockData/data";
+import {getdataTypes} from '../../utils/utilities';
 
 const HomePage = () => {
   const [showSection, setShowSection] = useState(false);
   const [showReport, setShowReport] = useState(false);
   const [data, setData] = useState([]);
   const [fileDownloadURL, setFileDownloadURL] = useState("");
+  const [dataTypes, setDataTypes]= useState("")
 
   const fileName = "objects.txt";
 
   useEffect(() => {
-    setData(objects.objects);
+    setData(mockData.mixedArray);
   }, [data]);
 
   function generateObjects() {
     setShowSection(true);
 
     // prepare the data to get the object's value comma separated
-    const values = objects.objects.map((obj) => Object.values(obj)).join(", ");
+    const values = mockData.mixedArray.map((item) => item).join(", "); 
 
     //download the file
     const blob = new Blob([values]);
@@ -30,6 +32,10 @@ const HomePage = () => {
 
   function generateReport() {
     setShowReport(true);
+
+    // get the data types of the array elements
+    let dataTypes = getdataTypes(data);
+    setDataTypes(dataTypes);
   }
 
   return (
@@ -44,7 +50,7 @@ const HomePage = () => {
           fileName={fileName}
         />
         <br />
-        {showReport && <ReportCard objects={data} />}
+        {showReport && <ReportCard data={dataTypes} />}
       </main>
     </>
   );
