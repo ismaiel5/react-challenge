@@ -3,26 +3,26 @@ import Styles from "../../styles/Home.module.scss";
 import Card from "../../components/Card";
 import ReportCard from "../../components/ReportCard";
 import mockData from "../../mockData/data";
-import {getdataTypes} from '../../utils/utilities';
+import { countDuplicateObjectsBasedOnKeys } from "../../utils/utilities";
+import Link from "next/Link";
 
 const HomePage = () => {
   const [showSection, setShowSection] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  const [data, setData] = useState([]);
   const [fileDownloadURL, setFileDownloadURL] = useState("");
-  const [dataTypes, setDataTypes]= useState("")
-
+  const [objectsData, setObjectsData] = useState([]);
+  const [countObject, setCountObject] = useState([]);
   const fileName = "objects.txt";
 
   useEffect(() => {
-    setData(mockData.mixedArray);
-  }, [data]);
+    setObjectsData(mockData.objects);
+  }, [objectsData]);
 
   function generateObjects() {
     setShowSection(true);
 
     // prepare the data to get the object's value comma separated
-    const values = mockData.mixedArray.map((item) => item).join(", "); 
+    const values = objectsData.map((obj) => Object.values(obj)).join(", ");
 
     //download the file
     const blob = new Blob([values]);
@@ -33,15 +33,17 @@ const HomePage = () => {
   function generateReport() {
     setShowReport(true);
 
-    // get the data types of the array elements
-    let dataTypes = getdataTypes(data);
-    setDataTypes(dataTypes);
+    let count = countDuplicateObjectsBasedOnKeys(objectsData);
+    setCountObject(count);
   }
 
   return (
     <>
       <main className={Styles.container}>
         <h1>Reactjs Challenge</h1>
+        <Link href="/info">
+          <a>Info page</a>
+        </Link>
         <Card
           generateObjectsFunc={generateObjects}
           generateReportFunc={generateReport}
@@ -50,7 +52,7 @@ const HomePage = () => {
           fileName={fileName}
         />
         <br />
-        {showReport && <ReportCard data={dataTypes} />}
+        {showReport && <ReportCard data={countObject} source="home" />}
       </main>
     </>
   );
