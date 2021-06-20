@@ -10,7 +10,7 @@ const HomePage = () => {
   const [data, setData] = useState([]);
   const [fileDownloadURL, setFileDownloadURL] = useState("");
 
-  const fileName = "objects.json";
+  const fileName = "objects.txt";
 
   useEffect(() => {
     setData(objects.objects);
@@ -19,20 +19,11 @@ const HomePage = () => {
   function generateObjects() {
     setShowSection(true);
 
-    // in case we want just the values of the objects
-    // prepare the data as object's value separated
-    // const values = objects.objects.map((obj) => Object.values(obj)).join(",")
-    // console.log("test :", values);
-
-    // prepare the data as string for the whole array of objects
-    let output = JSON.stringify({ objects: data });
-    console.log("output :", output);
+    // prepare the data to get the object's value comma separated
+    const values = objects.objects.map((obj) => Object.values(obj)).join(", ");
 
     //download the file
-    //  const blob = new Blob([values]);
-    const blob = new Blob([output]);
-
-    console.log("blob :", blob);
+    const blob = new Blob([values]);
     const downloadURL = URL.createObjectURL(blob);
     setFileDownloadURL(downloadURL);
   }
