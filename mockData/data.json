@@ -1,8 +1,15 @@
 {
-  "objects": [
-    { "alphanumerics": "assfdgsga12348fas" },
-    { "realNumbers": 13123.123 },
-    { "integers": 89181811238 },
-    { "alphabetical": "lizierdjfklaasf" }
+  "mixedArray": [
+    "hisadfnnasd",
+    126263,
+    "assfdgsga12348fas",
+    13123.123,
+    "lizierdjfklaasf",
+    "123192u3kjwekhf",
+    89181811238,
+    122,
+    "nmarcysfa900jkifh",
+    3.781,
+    2.11
   ]
 }
