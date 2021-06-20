@@ -1,8 +1,10 @@
+@import './Variables.scss';
+
 .card {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  border: 1px solid #eaeaea;
+  border:1px solid $secondary-color;
   border-radius: 10px;
   width: 50%;
 }
