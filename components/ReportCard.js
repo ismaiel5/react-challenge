@@ -1,8 +1,6 @@
 import Styles from "../styles/Card.module.scss";
 
 const ReportCard = (props) => {
-  console.log("data :", props.data);
-
   function populateData() {
     if (props.source == "home") {
       return Object.keys(props.data).map((obj, index) => {
