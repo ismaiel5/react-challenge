@@ -8,11 +8,11 @@ import Home from '../containers/Home';
 export default function HomePage() {
   return (
     <Layout
-        title="Reactjs Challenge!"
+        title="Reactjs Challenge"
         description="Reactjs Challenge">
-      <Header content="React Challenge Header" />
+      <Header content="Reactjs Challenge" />
       <Home />
-      <Footer content="React Challenge Footer"/>
+      <Footer content="Reactjs Challenge"/>
     </Layout>
   );
 }
