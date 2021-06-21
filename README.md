@@ -21,8 +21,9 @@
 
 ## Steps to run the project
 
-- 1- git clone : https://github.com/ismaiel5/react-challenge.git
-- 2- run: "npm install" to install all the packages and dependecies.
-- 3- run: "npm run dev" to run the project.
-- 4- you are ready to browse. :)
+- 1- open Git Bash / command line in desired folder and run : "git clone https://github.com/ismaiel5/react-challenge.git"
+- 2- from inside the project folder run: "npm install" to install all the packages and dependecies.
+- 3- also from inside the project folder run: "npm run dev" to run the project.
+- 4- open any browser and in new tab browse to : "http://localhost:3000" 
+- 5- you are ready to browse. :)
 
