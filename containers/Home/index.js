@@ -38,7 +38,6 @@ const HomePage = () => {
   }
 
   return (
-    <>
       <main className={Styles.container}>
         <h1>Reactjs Challenge</h1>
         <Link href="/info">
@@ -52,9 +51,8 @@ const HomePage = () => {
           fileName={fileName}
         />
         <br />
-        {showReport && <ReportCard data={countObject} source="home" />}
+        {showReport && <ReportCard data={countObject} source="home" title="Report facts" />}
       </main>
-    </>
   );
 };
 
