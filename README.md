@@ -1,9 +1,10 @@
 ## Reactjs challenge summary:
 - it has 2 pages
     - 1- Home page
-        - it mimic an api call for generating objects (using mockdata)
+        - it generats dynamic objects of four types (alphabetical, float numbers, integers, alphanumerics ) randomly.
         - it allows the user to download a file with the objects generated.
-        - it displays some facts about the objects generated as report
+        - it displays some facts about the random objects generated as report.
+        - it allows the user to generate new objects randomly as much as desired.
     - 2- Info page
         - info page call a users api from "https://reqres.in/" and get the users data
         - it renders the user names once the data received.
