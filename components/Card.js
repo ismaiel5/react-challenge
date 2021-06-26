@@ -4,7 +4,7 @@ import Button from "./Button";
 const Card = (props) => {
   return (
     <section className={Styles.card}>
-      <Button title="Generate Objects" clickHandler={props.generateObjectsFunc} />
+      <Button title={props.btnMessage} clickHandler={props.generateObjectsFunc} />
       <br />
       <br />
 
