@@ -1,13 +1,25 @@
 import ApiConstant from "../Info/constants";
 
-export async function getUsersData() {
-  const requestUrl = ApiConstant.USERS_URL;
+export async function getRandomObjects() {
+  const requestUrl = ApiConstant.RANDOM_OBJECT_URL;
+  let randomObjects;
 
-  const res = await fetch(requestUrl);
-  const json = await res.json();
-  if (res.status === 200) {
+  try {
+    const res = await fetch(requestUrl);
+    if (res.status === 200) {
+      randomObjects = await res.json();
+    } else {
+      randomObjects = [];
+    }
     return {
-      users: json.data,
+      randomObjects: randomObjects,
+      statusCode: res.status,
     };
-  } else return false;
+  } catch (error) {
+    randomObjects = [];
+  }
+  return {
+    randomObjects: randomObjects,
+    statusCode: 503,
+  };
 }

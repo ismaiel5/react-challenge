@@ -1,5 +1,5 @@
 const ApiConstants = {
-        USERS_URL : "https://reqres.in/api/users"
+        RANDOM_OBJECT_URL : "http://localhost:8080/api/randomObjects"
 }
 
 export default ApiConstants;
