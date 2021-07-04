@@ -5,9 +5,12 @@
         - it allows the user to download a file with the objects generated.
         - it displays some facts about the random objects generated as report.
         - it allows the user to generate new objects randomly as much as desired.
-    - 2- Info page
-        - info page call a users api from "https://reqres.in/" and get the users data
-        - it renders the user names once the data received.
+    - 2- Api Data page
+        - Api Data page calls a an expressjs api from and get 50 random objects generated.
+            - The link to the api project:  https://github.com/ismaiel5/react-challenge-api
+            - You need to follow the steps in readme to run the api project to get the data.
+        - it renders the count of each object according to their types.
+        - it allows the user to call the api to generate a new set of 50 random objects on every new api request.
 
 
 
