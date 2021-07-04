@@ -3,7 +3,7 @@ import Styles from "../../styles/Home.module.scss";
 import Card from "../../components/Card";
 import ReportCard from "../../components/ReportCard";
 import { countDuplicateObjectsBasedOnKeys, runGeneratingFuncRandomly } from "../../utils/utilities";
-import Link from "next/Link";
+import Navigation from '../../components/Navigation'
 
 const HomePage = () => {
   const [showSection, setShowSection] = useState(false);
@@ -48,9 +48,7 @@ const HomePage = () => {
   return (
     <main className={Styles.container}>
       <h1>Reactjs Challenge</h1>
-      <Link href="/info">
-        <a>Info page</a>
-      </Link>
+      <Navigation pageTitle="/info" linkTitle="Api Data Page" />
       <Card
         btnMessage={btnMessage}
         generateObjectsFunc={generateObjects}
